@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Generation Brasil">
+    <meta name="description"
+        content="Portifólio da Generation Brasil, desenvolvedor Full stack especioalizado em criar experiências digitais incríveis. Conheça meus projetos e entre em contato ">
+    <meta name="robots" content="index,follow">
+    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+    <title>Portifólio Generation Brasil</title>
+</head>
+
+<body>
+    <!-- Cabeçalho da Página (header) -->
+    <header>
+        <div>
+            <!-- Título -->
+            <a href="index.html" id="titulo">Portifólio</a>
+        </div>
+        <!-- Menu -->
+        <nav>
+            <ol>
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ol>
+        </nav>
+    </header>
+    <!-- Seção Principal da Página (main) -->
+    <main>
+        <section id="hero">
+            <!-- Boas vindas -->
+            <article class="hero-content">
+                <span>👋 Ola, eu sou a Generation Brasil</span>
+                <h1>Desenvolvedor Full Stack</h1>
+                <p>Transformo ideias em código e crio experiências digitais incríveis</p>
+                <div class="buttons-container"></div>
+                <a href="#contact" class="botao">Entre em contato</a>
+                <a href="#about" class="botao-outline">Saiba Mais...</a>
+            </article>
+            <!-- Imagem -->
+            <figure class="hero-image">
+                <img src="./assets/img/foto_dev_man.svg" alt="foto do autor" class="float-animation">
+
+            </figure>
+        </section>
+        <section id="about" class="section-container about-container">
+            <figure class="about-image">
+                <img src="./assets/img/avatar_dev_man.svg" alt="foto do perfil">
+            </figure>
+            <article class="about-content">
+                <h2>Sobre min</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta magnam asperiores eligendi saepe
+                    dignissimos suscipit atque odio eius doloremque dolore veritatis obcaecati, rem enim laudantium,
+                    neque quam consectetur soluta fugiat?
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut maiores incidunt nobis fuga saepe magnam
+                    odio quibusdam excepturi voluptate modi est et pariatur rem minima vitae, dignissimos similique eum
+                    distinctio.</p>
+            </article>
+            <div class="about-buttons-data">
+                <div class="buttons-container">
+                    <a href="#" target="_blank" class="botao">GitHub</a>
+                    <a href="#" target="_blank" class="botao-outline">Currículo</a>
+                </div>
+                <div class="data-container">
+                    <div class="data-item">
+                        <span class="data-number">100</span>
+                        <span class="data-label">Seguidores</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-number">10</span>
+                        <span class="data-label">Repositores</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- Seção Projetos do autor -->
+        <section id="projects" class="section-container projects-container">
+            <h2>Meus Projetos</h2>
+
+            <!-- Swiper Container -->
+            <div class="swiper projects-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+
+                        <article class="project-card">
+                            <figure class="project-image">
+                                <img src="./assets/icons/languages/github.svg" alt="Ícone GitHub">
+                            </figure>
+
+                            <div class="project-content">
+                                <h3>Projeto Github</h3>
+                                <p>Projeto Desenvolvido no GitHub</p>
+
+                                <div class="project-tags">
+                                    <span class="tag">GitHub</span>
+                                </div>
+
+                                <div class="project-buttons">
+                                    <a href="#" target="_blank" class="botao botao-sm">
+                                        GitHub
+                                    </a>
+                                    <a href="#" target="_blank" class="botao-outline botao-sm">
+                                        Deploy
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Botões de navegação -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+                <!-- Paginação -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <!-- Seção de Contato -->
+        <section id="contact" class="section-container contact-container">
+            <h2>Entre em Contato</h2>
+            <p>Sinta-se à vontade para entrar em contato comigo!</p>
+
+            <!-- Links de redes sociais -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="./assets/icons/social/linkedin.svg" alt="Ícone LinkedIn">
+                </a>
+                <a href="https://github.com" target="_blank">
+                    <img src="./assets/icons/social/github.svg" alt="Ícone GitHub">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="./assets/icons/social/instagram.svg" alt="Ícone Instagram">
+                </a>
+            </div>
+
+            <!-- Formulário de contato -->
+            <form id="formulario" class="contact-form">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" placeholder="Digite o seu nome completo">
+                <span id="erro-nome" class="erro"></span>
+
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="text" placeholder="Digite o seu e-mail">
+                <span id="erro-email" class="erro"></span>
+
+                <label for="assunto">Assunto</label>
+                <input id="assunto" name="assunto" type="text" placeholder="Digite o assunto da mensagem">
+                <span id="erro-assunto" class="erro"></span>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Escreva a sua mensagem aqui..."></textarea>
+                <span id="erro-mensagem" class="erro"></span>
+
+                <button type="submit" class="botao">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+    <!-- Rodapé da Página (footer) -->
+    <footer>
+Desenvolvido por Generation Brasil - 2026
+    </footer>
+</body>
+
+</html>
