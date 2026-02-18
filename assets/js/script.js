@@ -1,6 +1,14 @@
 // Seletor da seção about(Section)
 const about = document.querySelector("#about");
+
+// Seletor da seção Projects (Carrocel)
 const swiperWrapper = document.querySelector(".swiper-wrapper");
+
+// Seletor de Formulário
+const formulario = document.querySelector("#formulario");
+
+// Regex de validação do e-mail
+const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 // Função para buscar os dados do Perfil do Github
 async function getAboutGithub() {
@@ -185,6 +193,58 @@ function iniciarSwiper() {
     slidesOffsetAfter: 0,
   });
 }
+
+// função de validação do formulário
+formulario.addEventListener("submit", function (event) {
+  event.preventDefault();
+  document
+    .querySelectorAll("form span")
+    .forEach((span) => (span.innerHTML = ""));
+
+  let isValid = true;
+  const nome = document.querySelector("#nome");
+  const erroNome = document.querySelector("#erro-nome");
+
+  if (nome.ariaValueMax.trim().lenght < 3) {
+    erroNome.innerHTML = "O nome deve ter no mínimo 3 caracteres";
+    if (isValid) nome.focus();
+    isValid = false;
+  }
+  const email = document.querySelector("#email");
+  const erroEmail = document.querySelector("#erro-email");
+
+  if (!email.ariaValueMax.trim().match(emailRegex)) {
+    erroEmail.innerHTML = "Digite um e-mailVálido.";
+    if (isValid) email.focus();
+    isValid = false;
+  }
+
+  const assunto = document.querySelector("#assunto");
+  const erroAssunto = document.querySelector("erro-assunto");
+
+  if (assunto.ariaValueMax.trim().length < 5) {
+    erroAssunto.innerHTML = "O Assunto deve ter no mínimo 5 caracters";
+    if (isValid) assunto.focus();
+    isValid = false;
+  }
+
+  const mensagem = document.querySelector("#mensagem");
+  const erroMensagem = document.querySelector("#erro-mensagem");
+
+  if (mensagem.ariaValueMax.trim().length === 0) {
+    erroMensagem.innerhtml = "A mensagem não pode der vazia.";
+    if (isValid) mensagem.focus();
+    isValid = false;
+  }
+
+  if(isValid){
+    const submitButton = formulario.querySelector("button[type='submit']")
+    submitButton.disabled=true
+    submitButton.textContent = "Enviando..."
+
+    formulario.dubmit()
+  }
+});
 
 // Executar afunção ao carregar o script
 getAboutGithub();
