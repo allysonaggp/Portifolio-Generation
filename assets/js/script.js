@@ -197,23 +197,25 @@ function iniciarSwiper() {
 // função de validação do formulário
 formulario.addEventListener("submit", function (event) {
   event.preventDefault();
-  document
-    .querySelectorAll("form span")
+
+  document.querySelectorAll("form span")
     .forEach((span) => (span.innerHTML = ""));
 
   let isValid = true;
+
   const nome = document.querySelector("#nome");
   const erroNome = document.querySelector("#erro-nome");
 
-  if (nome.ariaValueMax.trim().lenght < 3) {
+  if (nome.value.trim().lenght < 3) {
     erroNome.innerHTML = "O nome deve ter no mínimo 3 caracteres";
     if (isValid) nome.focus();
     isValid = false;
   }
+
   const email = document.querySelector("#email");
   const erroEmail = document.querySelector("#erro-email");
 
-  if (!email.ariaValueMax.trim().match(emailRegex)) {
+  if (!email.value.trim().match(emailRegex)) {
     erroEmail.innerHTML = "Digite um e-mailVálido.";
     if (isValid) email.focus();
     isValid = false;
@@ -222,7 +224,7 @@ formulario.addEventListener("submit", function (event) {
   const assunto = document.querySelector("#assunto");
   const erroAssunto = document.querySelector("erro-assunto");
 
-  if (assunto.ariaValueMax.trim().length < 5) {
+  if (assunto.value.trim().length < 5) {
     erroAssunto.innerHTML = "O Assunto deve ter no mínimo 5 caracters";
     if (isValid) assunto.focus();
     isValid = false;
@@ -231,8 +233,8 @@ formulario.addEventListener("submit", function (event) {
   const mensagem = document.querySelector("#mensagem");
   const erroMensagem = document.querySelector("#erro-mensagem");
 
-  if (mensagem.ariaValueMax.trim().length === 0) {
-    erroMensagem.innerhtml = "A mensagem não pode der vazia.";
+  if (mensagem.value.trim().length === 0) {
+    erroMensagem.innerHTML = "A mensagem não pode der vazia.";
     if (isValid) mensagem.focus();
     isValid = false;
   }
@@ -242,7 +244,7 @@ formulario.addEventListener("submit", function (event) {
     submitButton.disabled=true
     submitButton.textContent = "Enviando..."
 
-    formulario.dubmit()
+    formulario.submit()
   }
 });
 
