@@ -34,6 +34,7 @@ async function getAboutGithub() {
                     <div class="buttons-container">
                         <a href="${perfil.html_url}" target="_blank" class="botao">GitHub</a>
                         <a href="./assets/curriculo/allyson-curriculo.pdf" target="_blank" class="botao-outline">Currículo</a>
+                   
                     </div>
                     <div class="data-container">
                         <div class="data-item">
